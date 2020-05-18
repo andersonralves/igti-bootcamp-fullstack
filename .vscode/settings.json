@@ -7,13 +7,8 @@
   "editor.fontFamily": "'Fira Code Retina', Consolas, 'Courier New', monospace",
   "window.zoomLevel": 0,
   "workbench.iconTheme": "vscode-icons",
-  "[json]": {
-
-
-
-
-  },
-  "editor.fontSize": 12,
+  "[json]": {},
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.lineHeight": 24,
   "editor.formatOnSave": true,
@@ -32,5 +27,5 @@
   "editor.parameterHints.enabled": true,
   "vsicons.dontShowNewVersionMessage": true,
   "prettier.singleQuote": true,
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "onFocusChange"
 }

@@ -49,10 +49,12 @@ function clearInputsRangeAndSetEvenvChange() {
     setDescriptionColor(color.R, color.G, color.B);
   }
 
+  // Seta a cor na div baseada nos valores dos text box
   function setColorDiv(r, g, b) {
     document.querySelector('#resultRGB').style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 
+  // Setando descrição do rgb
   function setDescriptionColor(r, g, b) {
     document.querySelector("#descriptionRGB").textContent = `rgb(${r}, ${g}, ${b})`;
   }

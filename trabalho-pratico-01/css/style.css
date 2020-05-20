@@ -1,4 +1,64 @@
+body {
+  background-color: #ccc;
+}
+
+.container {
+  width: 500px;
+  margin: 30px auto;
+  font-family: 'Brandon Grotesque';
+  text-align: center;
+  background-color: #837878;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+input {
+  font-size: 1.2em;
+}
+
+label {
+  font-size: 1.4rem;
+  padding: 5px;
+}
+
+input[type='range'] {
+  margin-top: 15px;
+}
+
+.value-color {
+  width: 50px;
+  text-align: center;
+  background-color: #222222;
+  color: #f0f0f0;
+  padding: 5px;
+}
+
 #resultRGB {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
+  margin: 30px auto 10px auto;
+}
+
+#descriptionRGB {
+  font-weight: bold;
+}
+
+#labelRed {
+  background-color: red;
+  color: #f0f0f0;
+}
+
+#labelGreen {
+  background-color: green;
+  color: #f0f0f0;
+}
+
+#labelBlue {
+  background-color: blue;
+  color: #f0f0f0;
 }

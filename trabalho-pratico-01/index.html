@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-      IGTI | Bootcamp Desenvovledor Full Stack - Trabalho Prático do Módulo 1
-    </title>
-  </head>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 
-  <body>
-    <div class="container">
-      <h1>Trabalho Prático do Modulo 1</h1>
+  <title>
+    IGTI | Bootcamp Desenvovledor Full Stack - Trabalho Prático do Módulo 1
+  </title>
+</head>
 
-      <div class="ranges">
-        <!-- (R)-->
-        <fieldset>
-          <label id="labelRed">R</label>
-          <input type="range" id="inputRangeRed" min="0" max="255" />
-          <input type="text" id="inputTextRed" class="value-color" disabled />
-        </fieldset>
+<body>
+  <div class="container">
+    <h1>Trabalho Prático do Modulo 1</h1>
 
-        <!-- (G) -->
-        <fieldset>
-          <label id="labelGreen">G</label>
-          <input type="range" id="inputRangeGreen" min="0" max="255" />
-          <input type="text" id="inputTextGreen" class="value-color" disabled />
-        </fieldset>
+    <div class="ranges">
+      <!-- (R)-->
+      <fieldset>
+        <label id="labelRed">R</label>
+        <input type="range" id="inputRangeRed" min="0" max="255" />
+        <input type="text" id="inputTextRed" class="value-color" disabled />
+      </fieldset>
 
-        <!-- (B) -->
-        <fieldset>
-          <label id="labelBlue">B</label>
-          <input type="range" id="inputRangeBlue" min="0" max="255" />
-          <input type="text" id="inputTextBlue" class="value-color" disabled />
-        </fieldset>
-      </div>
+      <!-- (G) -->
+      <fieldset>
+        <label id="labelGreen">G</label>
+        <input type="range" id="inputRangeGreen" min="0" max="255" />
+        <input type="text" id="inputTextGreen" class="value-color" disabled />
+      </fieldset>
 
-      <div id="resultRGB"></div>
-      <span id="descriptionRGB">rgb(0, 0, 0)</span>
+      <!-- (B) -->
+      <fieldset>
+        <label id="labelBlue">B</label>
+        <input type="range" id="inputRangeBlue" min="0" max="255" />
+        <input type="text" id="inputTextBlue" class="value-color" disabled />
+      </fieldset>
     </div>
-    <script src="./js/script.js"></script>
-  </body>
+
+    <div id="resultRGB"></div>
+    <span id="descriptionRGB">rgb(0, 0, 0)</span>
+
+    <footer>by <a mailto="andersonricardo.alves@gmail.com">Anderson Alves</a></footer>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+
 </html>

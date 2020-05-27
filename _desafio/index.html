@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
 
-    <title>IGTI | Bootcamp FullStack - Desafio</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/materialize.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <title>IGTI | Bootcamp FullStack - Desafio</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="center">Desafio do Módulo I - <em>Pesquisa de usuários</em></h2>
+    <div class="row">
+      <div class="col s12">
+        <div id="search">
+          <input type="text" id="searchInput">
+          <button id="searchButton" disabled>BUSCAR</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6">
+        <div id="users">
+          <h3 id="usersDefaultMessage"></h3>
+          <div id="totalUsers"></div>
+          <div id="usersList"></div>
+        </div>
+      </div>
+
+      <div class="col s6">
+        <h3 id="statisticsDefaultMessage"></h3>
+        <div id="statistics"></div>
+      </div>
+    </div>
+
+    <script src="./js/materialize.min.js"></script>
     <script src="./js/script.js"></script>
-  </body>
+</body>
+
 </html>

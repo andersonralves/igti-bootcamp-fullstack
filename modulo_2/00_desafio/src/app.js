@@ -1,13 +1,14 @@
-import express from 'express';
-import server from './config/server.js';
-import path from 'path';
-import fs  from 'fs';
-import { promises } from 'fs';
-import functions from './functions.js';
+import express from "express";
+import server from "./config/server.js";
+import path from "path";
+import fs from "fs";
+import { promises } from "fs";
+import functions from "./functions.js";
+
 
 const readFile = promises.readFile;
 const writeFile = promises.writeFile;
-const __dirname =  path.resolve();
+const __dirname = path.resolve();
 
 let globalEstados = null;
 let globalCidades = null;
@@ -16,30 +17,34 @@ const app = express();
 const port = server.port;
 
 async function start() {
- 
-  const estadosFilename = path.resolve(__dirname, 'src', 'data', 'Estados.json');
-  const cidadesFilename = path.resolve(__dirname, 'src', 'data', 'Cidades.json');
+  try {
+    const estadosFilename = path.resolve(
+      __dirname,
+      "src",
+      "data",
+      "Estados.json"
+    );
+    const cidadesFilename = path.resolve(
+      __dirname,
+      "src",
+      "data",
+      "Cidades.json"
+    );
 
-  await readFile(estadosFilename, 'utf8', (err, data) => {    
-    if (err) {
-      return;
-    }
+    let globalEstados = await readFile(estadosFilename, "utf8");
+    globalEstados = JSON.parse(globalEstados);
 
-    globalEstados = dta;
-  })
+    let globalCidades = await readFile(cidadesFilename, "utf8");
+    globalCidades = JSON.parse(globalCidades);
 
-  readFile(cidadesFilename, 'utf8', (err, data) => {    
-    if (err) {
-      return;
-    }
 
-    globalEstados = dta;
-  })
- 
-  
+    functions.criarArquivoParaCadaEstado(globalEstados, globalCidades);
+
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-
 app.listen(port, () => {
- start();
+  start();
 });

@@ -1,6 +1,10 @@
 import { promises } from 'fs';
 import { start } from 'repl';
 const { readFile, writeFile } = promises;
+import path from 'path';
+
+
+console.log(path);
 
 let states = [];
 

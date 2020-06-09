@@ -11,7 +11,7 @@
   "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.lineHeight": 24,
-  //"editor.formatOnSave": true,
+  "editor.formatOnSave": true,
   "update.mode": "none",
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 120],

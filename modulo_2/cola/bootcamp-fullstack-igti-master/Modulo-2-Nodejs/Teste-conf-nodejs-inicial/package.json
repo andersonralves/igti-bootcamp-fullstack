@@ -1,0 +1,21 @@
+{
+  "name": "cls",
+  "version": "1.0.0",
+  "description": "projeto teste",
+  "main": "--experimental-modules ./src/app.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules ./src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.1.4",
+    "winston": "^3.2.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

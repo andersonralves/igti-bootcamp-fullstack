@@ -1,0 +1,4 @@
+data_accounts.json
+*.log
+!.gitkeep
+node_modules/

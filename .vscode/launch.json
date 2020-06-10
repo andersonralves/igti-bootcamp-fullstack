@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+<<<<<<< HEAD:.vscode/launch.json
     {
       "type": "node",
       "request": "attach",
@@ -12,13 +13,19 @@
       "protocol": "inspector"
     }
     /*
+=======
+>>>>>>> 76bbbbd84b202b83f8874be8f46d8d87d4c29348:.vscode/launch.json
     {
       "type": "node",
-      "request": "launch",
+      "request": "attach",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
+<<<<<<< HEAD:.vscode/launch.json
       "program": "${workspaceFolder}",
       "runtimeArgs": ["--experimental-modules"]
+=======
+      "protocol": "inspector"
+>>>>>>> 76bbbbd84b202b83f8874be8f46d8d87d4c29348:.vscode/launch.json
     }
     */
   ]

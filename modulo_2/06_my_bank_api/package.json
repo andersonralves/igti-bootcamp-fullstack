@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+<<<<<<< HEAD
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "swagger-ui-express": "^4.1.4",
+=======
+    "express": "^4.17.1",
+>>>>>>> 76bbbbd84b202b83f8874be8f46d8d87d4c29348
     "winston": "^3.2.1"
   },
   "devDependencies": {},

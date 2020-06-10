@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 data_accounts.json
 *.log
 !.gitkeep
 node_modules/
+=======
+accounts.json
+>>>>>>> 76bbbbd84b202b83f8874be8f46d8d87d4c29348

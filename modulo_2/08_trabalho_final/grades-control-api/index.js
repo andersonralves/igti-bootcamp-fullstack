@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
 app.use('/grade', gradeRouter);
 
 app.get('/', (req, res) => {

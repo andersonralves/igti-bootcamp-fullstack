@@ -4,11 +4,13 @@ import { promises as fsPromises } from 'fs';
 const router = express.Router();
 const { readFile, writeFile } = fsPromises;
 
+// Buscar as Grades
 async function getGrades() {
   const data = await readFile(global.dataFileName);
   return JSON.parse(data);
 }
 
+// Atualizar as Grades
 async function updateGrades(grades) {
   await writeFile(global.dataFileName, JSON.stringify(grades));
 }
@@ -18,6 +20,29 @@ router.get('/', async (req, res) => {
   try {
     const { grades } = await getGrades();
     res.send({ grades });
+  } catch (err) {
+    const msgError = { error: err.message };
+    res.status(400).send(msgError);
+    console.log(msgError);
+  }
+});
+
+// Listar Nota da Disciplina
+router.get('/note/:student/:subject', async (req, res) => {
+  try {
+    const dtGrades = await getGrades();
+    const { student, subject } = req.params;
+    const value = dtGrades.grades.reduce((acc, curr) => {
+      if (
+        curr.student.toLowerCase() === student.toLowerCase() &&
+        curr.subject.toLowerCase() == subject.toLowerCase()
+      ) {
+        return acc + curr.value;
+      }
+      return acc;
+    }, 0);
+
+    res.status(200).send({ student, subject, value });
   } catch (err) {
     const msgError = { error: err.message };
     res.status(400).send(msgError);

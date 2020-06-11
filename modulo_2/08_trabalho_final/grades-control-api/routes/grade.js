@@ -58,8 +58,8 @@ router.get('/average/:subject/:type', async (req, res) => {
     let count = 0;
     const total = dtGrades.grades.reduce((acc, curr) => {
       if (
-        curr.type.toLowerCase() === type.toLowerCase() &&
-        curr.subject.toLowerCase() == subject.toLowerCase()
+        curr.subject.toLowerCase() == subject.toLowerCase() &&
+        curr.type.toLowerCase() === type.toLowerCase()
       ) {
         count++;
         return acc + curr.value;
@@ -69,6 +69,29 @@ router.get('/average/:subject/:type', async (req, res) => {
     const average = total / count;
 
     res.status(200).send({ subject, type, average });
+  } catch (err) {
+    const msgError = { error: err.message };
+    res.status(400).send(msgError);
+    console.log(msgError);
+  }
+});
+
+// Listar os Três Melhores na Atividade da Disciplina
+router.get('/topthree/:subject/:type', async (req, res) => {
+  try {
+    const dtGrades = await getGrades();
+    const { subject, type } = req.params;
+    const topThree = dtGrades.grades
+      .filter((grade) => {
+        return (
+          grade.subject.toLowerCase() === subject.toLowerCase() &&
+          grade.type.toLowerCase() === type.toLowerCase()
+        );
+      })
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 3);
+
+    res.status(200).send({ subject, type, topThree });
   } catch (err) {
     const msgError = { error: err.message };
     res.status(400).send(msgError);

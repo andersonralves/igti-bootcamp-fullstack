@@ -44,6 +44,6 @@ Você deverá desenvolver os endpoints descritos abaixo:
 
 - [x] Crie um endpoint para **consultar a nota total** de um aluno em uma **disciplina**. O endpoint deverá receber como parâmetro o **student e o subject**, e realizar a **soma de todas as notas** de atividades correspondentes àquele **subject, para aquele student**. O endpoint deverá retornar a soma da propriedade value dos registros encontrados.
 
-- [ ] Crie um endpoint para **consultar** a média das grades de determinado **subject e type**. O endpoint deverá receber como parâmetro um **subject e um type**, e retornar a média. A média é calculada somando o registro value de todos os registros que possuem o subject e type informados, dividindo pelo total de registros que possuem este mesmo subject e type.
+- [x] Crie um endpoint para **consultar** a média das grades de determinado **subject e type**. O endpoint deverá receber como parâmetro um **subject e um type**, e retornar a média. A média é calculada somando o registro value de todos os registros que possuem o subject e type informados, dividindo pelo total de registros que possuem este mesmo subject e type.
 
-- [ ] Crie um endpoint para retornar as três melhores grades de acordo com determinado subject e type. O endpoint deve receber como parâmetro um subject e um type, e retornar um array com os três registros de maior value daquele subject e type. A ordem deve ser do maior para o menor.
+- [ ] Crie um endpoint para retornar as **três melhores grades de acordo com determinado subject e type**. O endpoint deve receber como parâmetro um subject e um type, e **retornar um array com os três registros de maior value daquele subject e type**. A ordem deve ser do maior para o menor.

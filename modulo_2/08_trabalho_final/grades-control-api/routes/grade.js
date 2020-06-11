@@ -9,6 +9,10 @@ async function getGrades() {
   return JSON.parse(data);
 }
 
+async function updateGrades(grades) {
+  await writeFile(global.dataFileName, JSON.stringify(grades));
+}
+
 // Listar Grades
 router.get('/', async (req, res) => {
   const { grades } = await getGrades();
@@ -22,7 +26,7 @@ router.post('/', async (req, res) => {
     const grade = { id: dtGrades.nextId++, ...req.body, timestamp: new Date() };
     dtGrades.grades.push(grade);
 
-    await writeFile(global.dataFileName, JSON.stringify(dtGrades));
+    await updateGrades(dtGrades);
 
     res.send(grade);
   } catch (err) {
@@ -47,7 +51,28 @@ router.put('/', async (req, res) => {
     }
 
     dtGrades.grades[oldIndex] = newGrade;
-    await writeFile(global.dataFileName, JSON.stringify(dtGrades));
+
+    await updateGrades(dtGrades);
+
+    res.status(204).send();
+  } catch (err) {
+    const msgError = { error: err.message };
+    res.status(400).send(msgError);
+    console.log(msgError);
+  }
+});
+
+// Excluir Grade
+router.delete('/', async (req, res) => {
+  try {
+    const dtGrades = await getGrades();
+    const newGrades = dtGrades.grades.filter(
+      (grade) => grade.id !== req.body.id
+    );
+
+    dtGrades.grades = newGrades;
+
+    await updateGrades(dtGrades);
 
     res.status(204).send();
   } catch (err) {

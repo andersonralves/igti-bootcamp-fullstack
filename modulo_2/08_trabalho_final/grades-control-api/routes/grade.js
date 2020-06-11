@@ -15,8 +15,34 @@ async function updateGrades(grades) {
 
 // Listar Grades
 router.get('/', async (req, res) => {
-  const { grades } = await getGrades();
-  res.send({ grades });
+  try {
+    const { grades } = await getGrades();
+    res.send({ grades });
+  } catch (err) {
+    const msgError = { error: err.message };
+    res.status(400).send(msgError);
+    console.log(msgError);
+  }
+});
+
+// Listar Grade Específica
+router.get('/:id', async (req, res) => {
+  try {
+    const dtGrades = await getGrades();
+    const grade = dtGrades.grades.find((grade) => {
+      return grade.id === parseInt(req.params.id, 10);
+    });
+
+    if (!grade) {
+      throw new Error(`Id '${req.params.id}' não cadastrado`);
+    }
+
+    res.status(200).send({ grade });
+  } catch (err) {
+    const msgError = { error: err.message };
+    res.status(400).send(msgError);
+    console.log(msgError);
+  }
 });
 
 // Criar Grade
@@ -28,7 +54,7 @@ router.post('/', async (req, res) => {
 
     await updateGrades(dtGrades);
 
-    res.send(grade);
+    res.status(201).send(grade);
   } catch (err) {
     const msgError = { error: err.message };
     res.status(400).send(msgError);

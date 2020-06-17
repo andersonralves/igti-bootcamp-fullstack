@@ -6,7 +6,7 @@
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "debug.console.fontFamily": "Fira Code Retina",
   "editor.fontFamily": "'Fira Code Retina', Consolas, 'Courier New', monospace",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "workbench.iconTheme": "vscode-icons",
   "[json]": {},
   "editor.fontSize": 12,

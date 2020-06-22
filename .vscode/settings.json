@@ -9,7 +9,7 @@
   "window.zoomLevel": 0,
   "workbench.iconTheme": "vscode-icons",
   "[json]": {},
-  "editor.fontSize": 12,
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.lineHeight": 16,
   "editor.formatOnSave": true,

@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Month from './Month';
 
-export default function Result({ calculatedInterest }) {
-  const [interest, setInterest] = useState([]);
+export default function Result({ result }) {
+  //return <div style={styles.flexRow}></div>;
 
-  useEffect(() => {
-    setInterest(calculatedInterest);
-  }, [calculatedInterest]);
-
-  return <div style={styles.flexRow}></div>;
+  return (
+    <div className="row">
+      {result.map((item) => {
+        const { id } = item;
+        return <Month key={id} data={item} />;
+      })}
+    </div>
+  );
 }
 
+/*
 const styles = {
   flexRow: {
     display: 'flex',
@@ -18,3 +22,6 @@ const styles = {
     alignItem: 'center',
   },
 };
+*/
+
+// Montante =

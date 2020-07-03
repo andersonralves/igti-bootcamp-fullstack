@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function Input({
   label,
   id,
   step,
   minValue,
-  initialValue,
-  onChangeData,
+  value,
+  onChangeInput,
 }) {
-  const [value, setValue] = useState(initialValue);
+  const [inputValue, setInputValue] = useState(value);
 
   const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+    const value = event.target.value;
 
-  useEffect(() => {
-    effect;
-    return () => {
-      cleanup;
-    };
-  }, [value]);
+    setInputValue(value);
+
+    const data = { id, value };
+
+    onChangeInput(data);
+  };
 
   return (
     <div className="input-field">
@@ -28,7 +27,7 @@ export default function Input({
         id={id}
         step={step}
         min={minValue}
-        value={value}
+        value={inputValue}
         onChange={handleChange}
       />
       <label htmlFor={id} className="active">
